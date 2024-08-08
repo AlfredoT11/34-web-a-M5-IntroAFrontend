@@ -5,6 +5,7 @@ import './App.css'
 import TituloComponent from './components/TituloComponent'
 import Section from './components/Section'
 import ContadorDeClicksComponent from './components/ContadorDeClicksComponent'
+import ListaTareasComponent from './components/ListaTareasComponent'
 
 function App() {
 
@@ -17,8 +18,12 @@ function App() {
       <TituloComponent mensaje='React' tamanio={4}></TituloComponent>
 
       <Section tituloMensaje="Contador">
-        <ContadorDeClicksComponent />
+
+        <ListaTareasComponent />
+        <ListaTareasComponent />
       </Section>
+
+      <ContadorDeClicksComponent />
     </>
   )
 }
