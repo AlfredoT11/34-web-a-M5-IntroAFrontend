@@ -9,3 +9,4 @@
 5. Se deben seguir las siguientes reglas al crear componentes:
     - Nombrar los componentes con PascalCase (primera en mayúscula y las palabras subsecuentes con mayúscula la primera letra).
     - La extensión debe ser en minúscula (.jsx).
+    - El proprty children es un prop especial que nos permite acceder a los elementos hijos de un componente. 
