@@ -1,8 +1,9 @@
-const ListaElementoComponent = ({ tarea }) => {
+const ListaElementoComponent = ({ tarea, completarTareaFunction }) => {
+
     return (
         <>
             <li>
-                {tarea}<button>Completar tarea</button>
+                {tarea}<button onClick={completarTareaFunction}>Completar tarea</button>
             </li>
         </>
     )
