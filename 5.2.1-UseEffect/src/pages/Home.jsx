@@ -57,7 +57,11 @@ const Home = () => {
             <ul>
                 {
                     pokemonesFiltrados.map((pokemon, index) => {
-                        return (<li key={index}>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</li>);
+                        return (
+                            <NavLink key={index} to={`/pokemonDetail/${pokemon.name}`}>
+                                <li>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</li>
+                            </NavLink>
+                        );
                     })
                 }
             </ul>
