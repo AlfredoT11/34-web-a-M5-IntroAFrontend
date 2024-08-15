@@ -11,7 +11,7 @@ const RoutesIndex = () => {
         <Routes>
             <Route path='/' element={<Home />} /> {/* Esta línea nos dice que se carge la page Home cuando estemos en la ruta / */}
             <Route path='/about' element={<AcercaDe />}/> {/* Esta línea nos dice que se carge la page AcercaDe cuando estemos en la ruta /about */}
-            <Route path='/pokemonDetail/:name' element={<DetallePokemon />} />
+            <Route path='/pokemonDetail/:id' element={<DetallePokemon />} />
         </Routes>
     )
 }

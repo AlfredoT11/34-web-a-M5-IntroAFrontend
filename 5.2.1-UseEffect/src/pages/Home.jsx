@@ -58,7 +58,20 @@ const Home = () => {
                 {
                     pokemonesFiltrados.map((pokemon, index) => {
                         return (
-                            <NavLink key={index} to={`/pokemonDetail/${pokemon.name}`}>
+                            /*
+                            "https://pokeapi.co/api/v2/pokemon/1/"
+                            separador = /
+                            [
+                            "https:"
+                            ""
+                            "pokeapi.co"
+                            "api"
+                            "v2"
+                            "pokemon"
+                            "1"
+                            ]
+                            */
+                            <NavLink key={index} to={`/pokemonDetail/${pokemon.url.split('/')[6]}`}>
                                 <li>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</li>
                             </NavLink>
                         );
