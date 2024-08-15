@@ -1,10 +1,14 @@
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import PokedexComponent from './components/PokedexComponent'
+import RoutesIndex from './routes/RoutesIndex'
 
 function App() {
 
   return (
-    <PokedexComponent></PokedexComponent>
+    // Debemos utilizar el elemento BrowserRouter para leer lo que está en la URL.
+    <BrowserRouter>
+      <RoutesIndex />
+    </BrowserRouter>
   )
 }
 

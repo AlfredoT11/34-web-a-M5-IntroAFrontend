@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import TitleH4Component, { TitleH1Component } from "../components/TitulosComponents";
+import { NavLink } from "react-router-dom";
 
-const PokedexComponent = () => {
-
+const Home = () => {
     const [listaPokemones, setListaPokemones] = useState([]);
     const [pokemonesBuscados, setPokemonesBuscados] = useState('');
 
@@ -17,22 +17,22 @@ const PokedexComponent = () => {
     */
     useEffect(() => {
         const consultarPokemons = async () => {
-            try{
+            try {
                 const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=50');
                 const json = await response.json();
                 console.log(json);
                 setListaPokemones(json.results);
-            }catch(e){
+            } catch (e) {
                 console.log(e);
             }
-        } 
+        }
 
         consultarPokemons();
     }, []); // Si el arreglo de depencias está vacío, la función a ejecutar SOLAMENTE se ejecuta cuando se carga el componente.
     // }); // Si no mandamos un arreglo de dependencias, la función a ejecutar se ejecuta CADA VEZ que el componente se renderize.
     // }, [a, b]); // Si el arreglo de depencias tiene valores, entonces la función a ejecutar se ejecutará CADA VEZ que el valor de alguna de las dependencias se modifique.
 
-    function leerPokemonesBuscadosInput(event){
+    function leerPokemonesBuscadosInput(event) {
         setPokemonesBuscados(event.target.value);
     }
 
@@ -43,10 +43,12 @@ const PokedexComponent = () => {
 
     return (
         <>
-            <h1>Pokedéx</h1>
+            <TitleH1Component titulo='Pokédex' />
+
+            <TitleH4Component titulo='Buscador' />
             <form>
                 <label>Buscar pokemon: </label>
-                <input 
+                <input
                     type='text'
                     value={pokemonesBuscados}
                     onChange={leerPokemonesBuscadosInput}
@@ -59,8 +61,12 @@ const PokedexComponent = () => {
                     })
                 }
             </ul>
+
+            <NavLink to='/about'>
+                <p>Acerca de</p>
+            </NavLink>
         </>
     )
 }
 
-export default PokedexComponent;
+export default Home;
