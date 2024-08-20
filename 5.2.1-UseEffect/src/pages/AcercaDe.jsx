@@ -7,9 +7,10 @@ const AcercaDe = () => {
             <p>Esta aplicación fue desarrollada para la clase de Intro a FrontEnd</p>
 
             <NavLink to='/'>
-                <h2>Regresar a página principal</h2>
+                <h4>Regresar a página principal</h4>
             </NavLink>
         </>
+
     )
 }
 

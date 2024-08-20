@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const DetallePokemon = () => {
 
@@ -25,13 +25,28 @@ const DetallePokemon = () => {
         <>
             <h1>Detalles del Pokémon</h1>
             <h2>{detallePokemon?.name.charAt(0).toUpperCase() + detallePokemon?.name.slice(1)}</h2>
-            <ul>
-            {
-                detallePokemon?.stats.map((stat, index) => {
-                    return (<li key={index}>{stat.stat.name} : {stat.base_stat}</li>)
-                })
-            }
-            </ul>
+            <table className="table table-hover">
+                <thead>
+                    <th>Estadística</th>
+                    <th>Valor</th>
+                </thead>
+                <tbody>
+                    {
+                        detallePokemon?.stats.map((stat, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{stat.stat.name}</td>
+                                    <td>{stat.base_stat}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
+
+            <NavLink to='/'>
+                <h4>Regresar a página principal</h4>
+            </NavLink>
         </>
     )
 }

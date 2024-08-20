@@ -54,30 +54,47 @@ const Home = () => {
                     onChange={leerPokemonesBuscadosInput}
                 />
             </form>
-            <ul>
-                {
-                    pokemonesFiltrados.map((pokemon, index) => {
-                        return (
-                            /*
-                            "https://pokeapi.co/api/v2/pokemon/1/"
-                            separador = /
-                            [
-                            "https:"
-                            ""
-                            "pokeapi.co"
-                            "api"
-                            "v2"
-                            "pokemon"
-                            "1"
-                            ]
-                            */
-                            <NavLink key={index} to={`/pokemonDetail/${pokemon.url.split('/')[6]}`}>
-                                <li>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</li>
-                            </NavLink>
-                        );
-                    })
-                }
-            </ul>
+            <div className="container">
+                <div className="row">
+                    {
+                        pokemonesFiltrados.map((pokemon, index) => {
+                            return (
+                                /*
+                                "https://pokeapi.co/api/v2/pokemon/1/"
+                                separador = /
+                                [
+                                "https:"
+                                ""
+                                "pokeapi.co"
+                                "api"
+                                "v2"
+                                "pokemon"
+                                "1"
+                                ]
+                                */
+
+                                <div key={index} className="col-3 p-3">
+                                    <div className="card sombra" style={{ width: "18rem" }}>
+                                        <NavLink to={`/pokemonDetail/${pokemon.url.split('/')[6]}`}>
+                                            <img
+                                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`}
+                                                className="card-img-top"
+                                                alt="..."
+                                            />
+                                        </NavLink>
+                                        <div className="card-body">
+                                            <NavLink to={`/pokemonDetail/${pokemon.url.split('/')[6]}`}>
+                                                <h5 className="card-title">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h5>
+                                            </NavLink>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+            </div>
+
 
             <NavLink to='/about'>
                 <p>Acerca de</p>

@@ -1,13 +1,21 @@
-const TitleH1Component = ({titulo}) => {
+const TitleH1Component = ({ titulo }) => {
+
+    const myStyles = {
+        /*
+        color: 'red', 
+        backgroundColor: 'green'
+        */
+    }
+
     return (
         <>
-            <h1>{titulo}</h1>
+            <h1 style={myStyles} >{titulo}</h1>
             <hr></hr>
         </>
     )
 }
 
-const TitleH2Component = ({titulo}) => {
+const TitleH2Component = ({ titulo }) => {
     return (
         <>
             <h2>{titulo}</h2>
@@ -16,7 +24,7 @@ const TitleH2Component = ({titulo}) => {
     )
 }
 
-const TitleH3Component = ({titulo}) => {
+const TitleH3Component = ({ titulo }) => {
     return (
         <>
             <h3>{titulo}</h3>
@@ -25,7 +33,7 @@ const TitleH3Component = ({titulo}) => {
     )
 }
 
-const TitleH4Component = ({titulo}) => {
+const TitleH4Component = ({ titulo }) => {
     return (
         <>
             <h4>{titulo}</h4>
