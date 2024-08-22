@@ -7,7 +7,7 @@ const NavBarComponent = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand>Pokédex</Navbar.Brand>
+          <Navbar.Brand>Pokédex para el grupo 34-web-a</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
