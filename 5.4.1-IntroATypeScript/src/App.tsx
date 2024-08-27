@@ -13,6 +13,16 @@ function App() {
         especie="Gato"
         edad={1}
         estaEsterilizado={true}
+        sobrenombres={['Boggie', 'Churrumino']}
+        humanos={['Tona', 'Mali']}
+      />
+
+      <MascotaInfoComponent
+        nombre="Loki"
+        especie="Perro"
+        edad={5}
+        estaEsterilizado={true}
+        humanos={'Poncho'}
       />
     </>
   )
