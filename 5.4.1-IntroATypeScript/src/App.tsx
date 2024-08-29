@@ -10,7 +10,7 @@ function App() {
     <>
       <MascotaInfoComponent
         nombre="Bowie"
-        especie="Gato"
+        especie="Michi"
         edad={1}
         estaEsterilizado={true}
         sobrenombres={['Boggie', 'Churrumino']}
